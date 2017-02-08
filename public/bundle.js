@@ -14354,8 +14354,8 @@ var Sidebar = function Sidebar(props) {
           'div',
           null,
           _react2.default.createElement(
-            _reactRouter.Link,
-            { to: '/albums', activeStyle: { color: 'blue' } },
+            'a',
+            { href: '/albums', onClick: deselectAlbum },
             'ALBUMS'
           )
         ),
@@ -28953,7 +28953,7 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 _reactDom2.default.render(_react2.default.createElement(
   _reactRouter.Router,
-  { history: _reactRouter.hashHistory },
+  { history: _reactRouter.browserHistory },
   _react2.default.createElement(
     _reactRouter.Route,
     { path: '/', component: _AppContainer2.default },
@@ -28967,9 +28967,7 @@ _reactDom2.default.render(_react2.default.createElement(
     ),
     _react2.default.createElement(_reactRouter.Route, { path: '/albums', component: _Albums2.default }),
     _react2.default.createElement(_reactRouter.Route, { path: 'albums/:albumId', component: _Album2.default })
-  ),
-  '//',
-  _react2.default.createElement(_reactRouter.Route, { path: '*', component: _Songs2.default })
+  )
 ), document.getElementById('app'));
 
 /***/ })
